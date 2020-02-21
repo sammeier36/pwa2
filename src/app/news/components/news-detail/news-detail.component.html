@@ -1,0 +1,7 @@
+<div *ngIf="newsItem">
+    <img [src]="newsItem.enclosure.url">
+    <div class="newsImage" [style.background]="'url(/images/' + newsItem.enclosure.url + ')'"></div>
+    <mat-card-title>{{newsItem.title}}</mat-card-title>
+    <mat-card-content>{{newsItem.contentSnippet}}<span class="text-fade"></span></mat-card-content>
+</div>
+                    

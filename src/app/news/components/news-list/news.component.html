@@ -1,0 +1,13 @@
+<div *ngIf="news$ | async" class="container">
+    <div class="content-container row row-top">
+        <div class="news-item col-md-4 col-sm-12" *ngFor="let item of news$ | async">
+            <mat-card class="col-md-11 col-sm-12 card">
+                <img [src]="item.enclosure.url">
+                <!-- <div class="newsImage" [style.background]="'url(/images/' + item.enclosure.url + ')'"></div> -->
+                <mat-card-title>{{item.title}}</mat-card-title>
+                <mat-card-content>{{item.contentSnippet}}<span class="text-fade"></span></mat-card-content>
+                <button mat-raised-button (click)="newsDetailOpen(item)">Read More</button>
+            </mat-card>
+        </div>
+    </div>
+</div>
